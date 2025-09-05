@@ -1,0 +1,16 @@
+FROM node:18-alpine
+
+WORKDIR /usr/src/app
+
+# Copy package.json (from root) and install deps
+COPY package.json ./
+RUN npm install
+
+# Copy frontend code
+COPY web ./web
+
+WORKDIR /usr/src/app/web
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

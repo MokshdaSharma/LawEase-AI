@@ -3,36 +3,26 @@ version: "3.9"
 services:
   api:
     build:
-      context: ./api
-      dockerfile: ../Dockerfile.api
-    container_name: legal-simplifier-api
+      context: .
+      dockerfile: api/Dockerfile.api
     ports:
       - "5000:5000"
-    volumes:
-      - ./api:/app
-      - ./api/voice_outputs:/app/voice_outputs
-      - ./api/uploads:/app/uploads
     env_file:
       - .env
-    networks:
-      - app-net
+    volumes:
+      - ./uploads:/app/uploads
+      - ./voice_outputs:/app/voice_outputs
 
   web:
     build:
-      context: ./web
-      dockerfile: ../Dockerfile.web
-    container_name: legal-simplifier-web
+      context: .
+      dockerfile: web/Dockerfile.web
     ports:
       - "3000:3000"
-    volumes:
-      - ./web:/usr/src/app
-      - /usr/src/app/node_modules
-    environment:
-      - CHOKIDAR_USEPOLLING=true
     depends_on:
       - api
-    networks:
-      - app-net
+
+
 
 networks:
   app-net:

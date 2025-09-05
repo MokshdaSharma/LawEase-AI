@@ -1,0 +1,33 @@
+# Ignore Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+.env
+.venv/
+env/
+
+# Ignore uploads and generated voice files (handled via volumes)
+uploads/
+voice_outputs/
+
+# Ignore local datasets (mount externally if needed)
+datasets/
+
+# Ignore frontend build artifacts and node_modules
+node_modules/
+web/node_modules/
+web/dist/
+
+# Ignore logs
+*.log
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
