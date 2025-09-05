@@ -3,7 +3,7 @@ import speech_recognition as sr
 from gtts import gTTS
 import uuid
 import os
-from config import settings
+from api.config import settings
 
 router = APIRouter()
 os.makedirs(settings.VOICE_OUTPUT_PATH, exist_ok=True)

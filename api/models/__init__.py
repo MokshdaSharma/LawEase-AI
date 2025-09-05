@@ -3,12 +3,14 @@ Models package initializer.
 Exposes Pydantic schemas for API request/response validation.
 """
 
-from .document import DocumentUploadRequest, DocumentUploadResponse
+# api/models/__init__.py
+from .document import DocumentRequest, SimplifiedResponse
 from .assistant import AssistantRequest, AssistantResponse
 
 __all__ = [
-    "DocumentUploadRequest",
-    "DocumentUploadResponse",
+    "DocumentRequest",
+    "SimplifiedResponse",
     "AssistantRequest",
     "AssistantResponse",
 ]
+

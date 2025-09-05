@@ -1,6 +1,6 @@
 from fastapi import APIRouter, UploadFile, File
 import os
-from config import settings
+from api.config import settings
 
 router = APIRouter()
 os.makedirs(settings.STORAGE_PATH, exist_ok=True)

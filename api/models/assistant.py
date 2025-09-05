@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class AssistantQuery(BaseModel):
+class AssistantRequest(BaseModel):
     query: str
     lang: str | None = None
 

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from models.document import DocumentRequest, SimplifiedResponse
-from services.simplifier import simplify_text
+from api.models.document import DocumentRequest, SimplifiedResponse
+from api.services.simplifier import simplify_text
 
 router = APIRouter()
 

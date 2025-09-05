@@ -4,8 +4,8 @@ from datasets import load_dataset
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langdetect import detect
-from config import settings
-from services.legal_term_db import get_term_definition
+from api.config import settings
+from api.services.legal_term_db import get_term_definition
 from langchain.embeddings import OpenAIEmbeddings
 import os
 

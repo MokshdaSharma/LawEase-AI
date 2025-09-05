@@ -11,3 +11,4 @@ pydub==0.25.1
 datasets==2.19.1
 transformers==4.41.2
 docker-compose
+python-multipart
