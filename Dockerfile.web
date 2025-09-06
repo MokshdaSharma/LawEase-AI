@@ -1,0 +1,22 @@
+# Use official Node.js image
+FROM node:18-slim
+
+WORKDIR /app
+
+# Copy package.json and lock first
+COPY package*.json ./
+
+# Install dependencies (including dev)
+RUN npm install --legacy-peer-deps
+
+# Copy frontend source
+COPY web/ ./web/
+
+# Set working dir to web/ where src/ and public/ live
+WORKDIR /app/web
+
+# Expose Vite port
+EXPOSE 3000
+
+# Run Vite dev server
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
